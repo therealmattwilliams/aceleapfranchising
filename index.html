@@ -109,6 +109,7 @@
   .field input,.field select{width:100%;background:#fbfcfe;border:1px solid #d6dee7;border-radius:10px;padding:14px 16px;color:var(--ink);font-family:'Archivo';font-size:1rem;transition:.2s}
   .field input:focus,.field select:focus{outline:none;border-color:var(--navy);background:#fff;box-shadow:0 0 0 3px rgba(0,51,85,.08)}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .phone-row{display:grid;grid-template-columns:104px 1fr;gap:16px}
   .consent{display:flex;gap:11px;align-items:flex-start;margin:6px 0 16px;font-size:.78rem;color:var(--gray);line-height:1.5}
   .consent input{margin-top:3px;width:17px;height:17px;flex:none;accent-color:var(--navy)}
   .consent a{color:var(--navy);text-decoration:underline}
@@ -234,7 +235,7 @@
         <p class="sec-intro">An E-2 business needs to be real, operating, and able to support you. A franchise gives you a documented model and a support system instead of building everything from scratch.</p>
       </div>
       <div class="why-grid">
-        <div class="why-card reveal"><div class="ic">$</div><h3>Accessible investment</h3><p>Many opportunities start from around US$100,000, far below the capital that other investor visa routes require.</p></div>
+        <div class="why-card reveal"><div class="ic">$</div><h3>Accessible investment</h3><p>Eligible franchise opportunities start from around US$100,000, far below the average capital required for the alternatives.</p></div>
         <div class="why-card reveal"><div class="ic">&#10003;</div><h3>Proven, documented model</h3><p>You step into a tested system with a real track record you can review during due diligence, not trial and error.</p></div>
         <div class="why-card reveal"><div class="ic">&#9733;</div><h3>Established brand</h3><p>You open with a recognized name and existing customer demand instead of building awareness from zero.</p></div>
         <div class="why-card reveal"><div class="ic">&#9881;</div><h3>Turn-key training and support</h3><p>Comprehensive onboarding, systems, and ongoing franchisor support help you operate from day one.</p></div>
@@ -322,14 +323,17 @@
             <div class="field"><label>Last name</label><input type="text" id="lname" placeholder="Last name"></div>
           </div>
           <div class="field"><label>Email</label><input type="email" id="email" placeholder="you@email.com"></div>
-          <div class="field"><label>Phone (with country code)</label><input type="tel" id="phone" placeholder="+44 ..."></div>
+          <div class="phone-row">
+            <div class="field"><label>Country code</label><input type="tel" id="ccode" placeholder="+44"></div>
+            <div class="field"><label>Area code and phone number</label><input type="tel" id="phone" placeholder="Area code and number"></div>
+          </div>
           <div class="form-row">
             <div class="field"><label>City / District</label><input type="text" id="city" placeholder="City or district"></div>
             <div class="field"><label>Province / State</label><input type="text" id="region" placeholder="Province or state"></div>
           </div>
           <div class="form-row">
             <div class="field"><label>Postal code</label><input type="text" id="postal" placeholder="Postal code"></div>
-            <div class="field"><label>Country</label><input type="text" id="country" placeholder="Country of residence"></div>
+            <div class="field"><label>Country of citizenship</label><input type="text" id="country" placeholder="Country of citizenship"></div>
           </div>
           <div class="field">
             <label>Investment level</label>
@@ -421,7 +425,7 @@
     });
   });
   document.getElementById('submitBtn').addEventListener('click',function(){
-    var req=['fname','lname','email','phone','country','invest'],ok=true;
+    var req=['fname','lname','email','ccode','phone','country','invest'],ok=true;
     req.forEach(function(id){var el=document.getElementById(id);if(!el.value){ok=false;el.style.borderColor='#c0556b';}else{el.style.borderColor='';}});
     var email=document.getElementById('email').value;
     if(email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ok=false;document.getElementById('email').style.borderColor='#c0556b';}
