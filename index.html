@@ -112,12 +112,11 @@
   .form-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:40px 36px;box-shadow:0 30px 70px -34px rgba(0,51,85,.4)}
   .form-card h3{font-size:1.7rem;margin-bottom:6px;color:var(--ink)}
   .form-card .fsub{color:var(--gray);font-size:.95rem;margin-bottom:24px}
-  .field{margin-bottom:18px}
+  .field{margin-bottom:18px;display:flex;flex-direction:column}
   .field label{display:block;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--gray);margin-bottom:8px;font-weight:600}
-  .field input,.field select{width:100%;background:#fbfcfe;border:1px solid #d6dee7;border-radius:10px;padding:14px 16px;color:var(--ink);font-family:'Archivo';font-size:1rem;transition:.2s}
+  .field input,.field select{width:100%;margin-top:auto;background:#fbfcfe;border:1px solid #d6dee7;border-radius:10px;padding:14px 16px;color:var(--ink);font-family:'Archivo';font-size:1rem;transition:.2s}
   .field input:focus,.field select:focus{outline:none;border-color:var(--navy);background:#fff;box-shadow:0 0 0 3px rgba(0,51,85,.08)}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .phone-row{display:grid;grid-template-columns:104px 1fr;gap:16px}
   .consent{display:flex;gap:11px;align-items:flex-start;margin:6px 0 16px;font-size:.78rem;color:var(--gray);line-height:1.5}
   .consent input{margin-top:3px;width:17px;height:17px;flex:none;accent-color:var(--navy)}
   .consent a{color:var(--navy);text-decoration:underline}
@@ -339,9 +338,9 @@
             <div class="field"><label for="lname">Last name</label><input type="text" id="lname" name="Last name" autocomplete="family-name" placeholder="Last name"></div>
           </div>
           <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" placeholder="you@email.com"></div>
-          <div class="phone-row">
+          <div class="form-row">
             <div class="field"><label for="ccode">Country code</label><input type="tel" id="ccode" name="Country code" placeholder="+44"></div>
-            <div class="field"><label for="phone">Area code and phone number</label><input type="tel" id="phone" name="Phone" autocomplete="tel-national" placeholder="Area code and number"></div>
+            <div class="field"><label for="phone">Area code and phone no.</label><input type="tel" id="phone" name="Phone" autocomplete="tel-national" placeholder="Area code and number"></div>
           </div>
           <div class="form-row">
             <div class="field"><label for="city">City / District</label><input type="text" id="city" name="City / District" autocomplete="address-level2" placeholder="City or district"></div>
